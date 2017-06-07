@@ -66,50 +66,144 @@ Which tells the browser, go do this request all over again for the provided loca
 
 ## An Example API
 
-Let's go to OMDB's API and give it a look.
+Let's go to the Pokemon API and give it a look.
 
-If I want to request a movie by **title**. I just add a query parameter `t=matrix`.
+If I want to request a Pokemon by **name**. I just add the name after `api/v2/pokemon`.
 
-[matrix request](https://www.omdbapi.com/?t=matrix)
+[FIND CHARMANDER](http://pokeapi.co/api/v2/pokemon/butterfree/)
 
 ```
-https://www.omdbapi.com/?t=matrix
+http://pokeapi.co/api/v2/pokemon/butterfree
 ```
+
+or some name
+
+```
+http://pokeapi.co/api/v2/pokemon/{name}
+```
+
 
 * What is the protocol of this request?
 * What is the domain name?
-* What is the query?
-* What parameters are there?
 
 
-`matrix response`
+`butterfree response`
 
 ```json
-// 20170328154423
-// https://www.omdbapi.com/?t=matrix
+// http://pokeapi.co/api/v2/pokemon/butterfree
 
 {
-  "Title": "Matrix",
-  "Year": "1993–",
-  "Rated": "N/A",
-  "Released": "01 Mar 1993",
-  "Runtime": "60 min",
-  "Genre": "Action, Drama, Fantasy",
-  "Director": "N/A",
-  "Writer": "Grenville Case",
-  "Actors": "Nick Mancuso, Phillip Jarrett, Carrie-Anne Moss, John Vernon",
-  "Plot": "Steven Matrix is one of the underworld's foremost hitmen until his luck runs out, and someone puts a contract out on him. Shot in the forehead by a .22 pistol, Matrix \"dies\" and finds ...",
-  "Language": "English",
-  "Country": "Canada",
-  "Awards": "1 win.",
-  "Poster": "N/A",
-  "Metascore": "N/A",
-  "imdbRating": "8.4",
-  "imdbVotes": "99",
-  "imdbID": "tt0106062",
-  "Type": "series",
-  "totalSeasons": "N/A",
-  "Response": "True"
+    "id": 12,
+    "name": "butterfree",
+    "base_experience": 178,
+    "height": 11,
+    "is_default": true,
+    "order": 16,
+    "weight": 320,
+    "abilities": [{
+        "is_hidden": true,
+        "slot": 3,
+        "ability": {
+            "name": "tinted-lens",
+            "url": "http://pokeapi.co/api/v2/ability/110/"
+        }
+    }],
+    "forms": [{
+        "name": "butterfree",
+        "url": "http://pokeapi.co/api/v2/pokemon-form/12/"
+    }],
+    "game_indices": [{
+        "game_index": 12,
+        "version": {
+            "name": "white-2",
+            "url": "http://pokeapi.co/api/v2/version/22/"
+        }
+    }],
+    "held_items": [{
+        "item": {
+            "name": "silver-powder",
+            "url": "http://pokeapi.co/api/v2/item/199/"
+        },
+        "version_details": [{
+            "rarity": 5,
+            "version": {
+                "name": "y",
+                "url": "http://pokeapi.co/api/v2/version/24/"
+            }
+        }]
+    }],
+    "location_area_encounters": [{
+        "location_area": {
+            "name": "kanto-route-2-south-towards-viridian-city",
+            "url": "http://pokeapi.co/api/v2/location-area/296/"
+        },
+        "version_details": [{
+            "max_chance": 10,
+            "encounter_details": [{
+                "min_level": 7,
+                "max_level": 7,
+                "condition_values": [{
+                    "name": "time-morning",
+                    "url": "http://pokeapi.co/api/v2/encounter-condition-value/3/"
+                }],
+                "chance": 5,
+                "method": {
+                    "name": "walk",
+                    "url": "http://pokeapi.co/api/v2/encounter-method/1/"
+                }
+            }],
+            "version": {
+                "name": "heartgold",
+                "url": "http://pokeapi.co/api/v2/version/15/"
+            }
+        }]
+    }],
+    "moves": [{
+        "move": {
+            "name": "flash",
+            "url": "http://pokeapi.co/api/v2/move/148/"
+        },
+        "version_group_details": [{
+            "level_learned_at": 0,
+            "version_group": {
+                "name": "x-y",
+                "url": "http://pokeapi.co/api/v2/version-group/15/"
+            },
+            "move_learn_method": {
+                "name": "machine",
+                "url": "http://pokeapi.co/api/v2/move-learn-method/4/"
+            }
+        }]
+    }],
+    "species": {
+        "name": "butterfree",
+        "url": "http://pokeapi.co/api/v2/pokemon-species/12/"
+    },
+    "sprites": {
+        "back_female": "http://pokeapi.co/media/sprites/pokemon/back/female/12.png",
+        "back_shiny_female": "http://pokeapi.co/media/sprites/pokemon/back/shiny/female/12.png",
+        "back_default": "http://pokeapi.co/media/sprites/pokemon/back/12.png",
+        "front_female": "http://pokeapi.co/media/sprites/pokemon/female/12.png",
+        "front_shiny_female": "http://pokeapi.co/media/sprites/pokemon/shiny/female/12.png",
+        "back_shiny": "http://pokeapi.co/media/sprites/pokemon/back/shiny/12.png",
+        "front_default": "http://pokeapi.co/media/sprites/pokemon/12.png",
+        "front_shiny": "http://pokeapi.co/media/sprites/pokemon/shiny/12.png"
+    },
+    "stats": [{
+        "base_stat": 70,
+        "effort": 0,
+        "stat": {
+            "name": "speed",
+            "url": "http://pokeapi.co/api/v2/stat/6/"
+        }
+    }],
+    "types": [{
+        "slot": 2,
+        "type": {
+            "name": "flying",
+            "url": "http://pokeapi.co/api/v2/type/3/"
+        }
+    }]
 }
 ```
 
@@ -117,27 +211,22 @@ https://www.omdbapi.com/?t=matrix
 
 For each exercise record the response's movie Title and Description.
 
-* What would the url look like to search for **Dexter**?
-* How would you search for a Star Wars movie?
-* How would you search for a Star Wars movie made in 1980?
-* How would you search for a Star Wars tv series?
-* How would you search for a Star Wars tv series made in 2014?
-
+* What would the url look like to search for **Charmander**?
 
 
 ## Using Fetch
 
 Fetch is the new experimental standard for easily making requests.
 
-```
-fetch("https://www.omdbapi.com/?t=the+matrix")
+```javascript
+fetch("http://pokeapi.co/api/v2/pokemon/butterfree")
 ```
 
-Try the above and check the nextwork tab.
+Try the above and check the network tab.
 
 
 ```javascript
-fetch("https://www.omdbapi.com/?t=the+matrix")
+fetch("http://pokeapi.co/api/v2/pokemon/butterfree")
   .then(function (response) {
     // tell it to read the JSON.
     return response.json();
@@ -152,7 +241,7 @@ Alternatively you could also condense this a bit.
 
 
 ```javascript
-fetch("https://www.omdbapi.com/?t=the+matrix")
+fetch("http://pokeapi.co/api/v2/pokemon/butterfree")
   .then(function (response) {
     // read the JSON
     response.json().then(function (data) {
@@ -166,13 +255,10 @@ fetch("https://www.omdbapi.com/?t=the+matrix")
 You might run into a CORS issue. To get around this you specify a mode of "cors".
 
 ```javascript
-fetch("https://www.omdbapi.com/?t=the+matrix", { mode: "cors" })
+fetch("http://pokeapi.co/api/v2/pokemon/butterfree", { mode: "cors" })
 ```
 
-* Console log your search data for a Star Wars movie.
-* Console log your search data for a Star Wars movie made in 1980.
-* Console log your search data for a Star Wars tv series.
-* Console log your search data for a Star Wars tv series made in 2014.
+* Console log your search data for a **Charmander**.
 
 
 ## Promises
@@ -181,7 +267,7 @@ You might have noticed the use of the `.then` on the end of the fetch. This is j
 
 This is not unlike how we specify functions to await and do something on some user interactions: click, hover, etc.
 
-The async thing we are awaiting in this case is the request's response from OMDB. Then when we call `response.json()` we are waiting for the response to be finished parsing from **text** to **JSON**.
+The async thing we are awaiting in this case is the request's response from Pokemon API. Then when we call `response.json()` we are waiting for the response to be finished parsing from **text** to **JSON**.
 
 
 See MDN promises to learn more.
@@ -196,18 +282,14 @@ Just find a CDN link for jQuery's source. Then just add the following:
 
 
 ```javascript
-$.get("https://www.omdbapi.com/?t=the+matrix").done(function (data) {
+$.get("hhttp://pokeapi.co/api/v2/pokemon/butterfree").done(function (data) {
   console.log(data);
 });
 ```
 
 This is pretty cool because you just get access to the parsed data right away.
 
-* Console log your search data for a Star Wars movie.
-* Console log your search data for a Star Wars movie made in 1980.
-* Console log your search data for a Star Wars tv series.
-* Console log your search data for a Star Wars tv series made in 2014.
-
+* Console log your search data for a **Charmander**.
 
 ### Forms
 
@@ -233,35 +315,39 @@ document.querySelector("#myForm").addEventListener("submit", function (event) {
 
 ## Assessment
 
-Using your knowledge of apis, events and objects try the following in JS Bin or Codepen.
+Using your knowledge of APIs, events, and objects try the following in JS Bin or Codepen.
 
-* Add a form to your site with an id of `searchTitle` for the  input field
+* Add a form to your site with an id of `searchName` for the  input field
 
   ```html
-  <input id="searchTitle" type="text">
+  <input id="searchName" type="text">
   ```
 
-* When the form is submitted create a search request using the searchTitle and fetch
+* When the form is submitted create a search request using the `searchName` and the `fetch` method.
   * Console log the response JSON
-* Add jQuery and rewrite your request to use `$.get`.
-* Create a #results div on your page
-* Set the HTML of the #results to the title and description of the result you get back from OMDB.
-  * Wrap your result in a `h2` and `p` tags for the title and description.
+* Add jQuery to the project and rewrite your request to use `$.get`.
+* Create a `#results` div on your page
+* Set the HTML of the `#results` to the `name` and `id` (the pokemon number) of the result you get back from Pokemon API.
+  * Wrap your result in a `h2` and `p` tags for the `name` and `id`.
 
 
-### Bonus
+### Bonus Assessment
 
-* Alert and don't run the request if the searchTitle is empty!
-* Add a select and option fields for the type.
-* Display the imdb rating of each result
-* Add each search to an array of previousResults
-  * Add a div called #previousResults
-  * Each time someone runs a new search **map** over the previousResults and display each with its rating, title, description
-* Add a new form #filterPrevious with a select tag for displaying the results in the following ways:
+* Alert the user and don't run the request if the `searchName` is empty!
+* Display the Pokemon Weight and Height of each result
+* Add each search to an array of `previousResults`
+  * Add a div called `#previousResults`
+  * Each time someone runs a new search **map** over the previousResults and display each with its `id`, `name`, `height`, and `weight`
+* Add a new form `#filterPrevious` with a select tag for displaying the results in the following ways:
   * Search Order: the order they were searched in
-  * Title: the alphabetical order of the title
-  * IMDB rating: the imdb rating
+  * Name: the alphabetical order of the previously searched Pokemon
+  * Pokemon Number: the `id` of the previously searched Pokemeon
 
 ### SUPER BONUS?
 
 * Style it up and add CSS to make it look cool!
+
+
+### SOLUTION?
+
+[solution](https://codepen.io/thedelmer/pen/owjbGp?editors=1111)
