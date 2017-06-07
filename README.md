@@ -8,14 +8,14 @@ Spend some time looking over the resources and then we'll do some networking to 
 
 ## Intro
 
-[Light Intro](intro_js.pdf)
-[Light Review](js_topics_review.pdf)
-[Fast Dive](strings_to_functions.md)
-[Intro Events](js_events/notes.pdf)
+* [Light Intro](intro_js.pdf)
+* [Light Review](js_topics_review.pdf)
+* [Fast Dive](strings_to_functions.md)
+* [Intro Events](js_events/notes.pdf)
 
 ## Topics
 
-[intro functions](function_slides.pdf)
-[higher order functions](higher_order_functions.pdf)
-[Intro Iterators and Objects Review](js_iterators.pdf)
-[API Play](api_play/README.md)
+* [intro functions](function_slides.pdf)
+* [higher order functions](higher_order_functions.pdf)
+* [Intro Iterators and Objects Review](js_iterators.pdf)
+* [API Play](api_play/README.md)
