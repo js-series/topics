@@ -16,6 +16,6 @@ Spend some time looking over the resources and then we'll do some networking to 
 ## Topics
 
 * [intro functions](function_slides.pdf)
-* [higher order functions](higher_order_functions.pdf)
+* [higher order functions](higher_order_functions.md)
 * [Intro Iterators and Objects Review](js_iterators.pdf)
 * [API Play](api_play/README.md)
